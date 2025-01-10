@@ -42,6 +42,14 @@ class Laby:
         for i in range(self.hauteur):
             self.labyrinthe[i][0] = '#'
             self.labyrinthe[i][self.largeur - 1] = '#'
+    
+        #Mettre l'arrivée (A)
+        arrivee_x = random.randrange(1, self.largeur, 2)
+        arrivee_y = random.randrange(1, self.hauteur, 2)
+        while self.labyrinthe[arrivee_y][arrivee_x] != ' ': #Pour ne pas avoir l'arrivée sur un mur, ca serait balo. Mais plutôt sur un des chemins qu'on a crée plus tôt
+            arrivee_x = random.randrange(1, self.largeur, 2)
+            arrivee_y = random.randrange(1, self.hauteur, 2)
+        self.labyrinthe[arrivee_y][arrivee_x] = 'A' #Marqué l'arrivée
 
     def afficher(self):
         # Affiche le laby
@@ -49,7 +57,7 @@ class Laby:
           print(''.join(ligne))
 
 largeur = 31 #Mettre des nombres impaires
-hauteur = 15 #Mettre des nombres impaires
+hauteur = 41 #Mettre des nombres impaires
 # (Parce que ça fait 3141 : 3,141)
 labyrinthe = Laby(largeur, hauteur)
 
