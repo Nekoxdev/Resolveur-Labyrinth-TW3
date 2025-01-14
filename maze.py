@@ -1,7 +1,7 @@
 import random 
 
 class Maze:
-    def __init__(self, width, height):
+    def __init__(self, width: int, height: int):
         self.width = width #width du laby
         self.height = height #height du laby
         # Grille remplie de murs : sous forme de matrice
@@ -59,7 +59,7 @@ class Maze:
 width = 31 #Mettre des nombres impaires
 height = 41 #Mettre des nombres impaires
 # (Parce que ça fait 3141 : 3,141)
-maze = Maze(width, height)
+maze = Maze(width: int, height: int)
 
 maze.generate()
 maze.display()
